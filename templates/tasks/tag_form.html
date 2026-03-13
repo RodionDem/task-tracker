@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 
 {% block title %}
-{% if form.instance.pk %}Update Task{% else %}Create Task{% endif %}
+{% if form.instance.pk %}Update Tag{% else %}Create Tag{% endif %}
 {% endblock %}
 
 {% block content %}
 <h1>
-    {% if form.instance.pk %}Update Task{% else %}Create Task{% endif %}
+    {% if form.instance.pk %}Update Tag{% else %}Create Tag{% endif %}
 </h1>
 
 <form method="post">
@@ -15,6 +15,6 @@
     <button type="submit" class="button">
         {% if form.instance.pk %}Update{% else %}Create{% endif %}
     </button>
-    <a href="{% url 'task-list' %}" class="button" style="background-color:#e74c3c">Back</a>
+    <a href="{% url 'tag-list' %}" class="button" style="background-color:#e74c3c">Back</a>
 </form>
 {% endblock %}
