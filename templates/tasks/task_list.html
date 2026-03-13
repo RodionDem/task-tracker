@@ -7,14 +7,16 @@
 
 <h1>Todo List</h1>
 
+<a href="{% url 'task-create' %}">Add task</a>
+
 <ul>
     {% for task in task_list %}
         <li>
-            {{ task.content }}
+            {{ task.content }} -
             {% if task.is_done %}
-                Done
+                Status: Done
             {% else %}
-                Not done
+                Status: Not done
             {% endif %}
         </li>
     {% empty %}
