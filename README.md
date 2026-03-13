@@ -50,7 +50,7 @@ A simple **Todo List** web application built with Django. Allows creating, editi
 
 1. Clone the repository:
     ```bash
-    git clone <URL_REPOSITORY>
+    git clone <https://github.com/RodionDem/task-tracker.git>
     cd task-tracker
 
 ---
