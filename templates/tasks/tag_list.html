@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Tags{% endblock %}
+
+{% block content %}
+<h1>Tags</h1>
+
+<a href="{% url 'tag-create' %}" class="button">Add Tag</a>
+
+<ul>
+    {% for tag in tags %}
+        <li>
+            <div class="task-info">
+                {{ tag.name }}
+            </div>
+            <div class="task-buttons">
+                <a href="{% url 'tag-update' tag.pk %}" class="button" style="background-color:#3498db">Update</a>
+                <a href="{% url 'tag-delete' tag.pk %}" class="button" style="background-color:#e74c3c">Delete</a>
+            </div>
+        </li>
+    {% empty %}
+        <li>No tags yet</li>
+    {% endfor %}
+</ul>
+{% endblock %}

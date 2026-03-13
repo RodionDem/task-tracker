@@ -13,7 +13,6 @@ class Task(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     deadline = models.DateTimeField(null=True, blank=True)
     is_done = models.BooleanField(default=False)
-
     tags = models.ManyToManyField(Tag, related_name="tasks", blank=True)
 
     class Meta:
