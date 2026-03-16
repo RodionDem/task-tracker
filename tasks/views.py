@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 
-from .models import Task, Tag
+from tasks.models import Task, Tag
 
 
 class TaskListView(ListView):
