@@ -16,14 +16,30 @@
                     - due {{ task.deadline }}
                 {% endif %}
             </div>
+
             <div class="task-buttons">
-                {% if task.is_done %}
-                    <a href="{% url 'task-toggle' task.pk %}" class="button" style="background-color:#f39c12">Undo</a>
-                {% else %}
-                    <a href="{% url 'task-toggle' task.pk %}" class="button">Complete</a>
-                {% endif %}
-                <a href="{% url 'task-update' task.pk %}" class="button" style="background-color:#3498db">Update</a>
-                <a href="{% url 'task-delete' task.pk %}" class="button" style="background-color:#e74c3c">Delete</a>
+
+                <form method="post" action="{% url 'task-toggle' task.pk %}" style="display:inline;">
+                    {% csrf_token %}
+                    {% if task.is_done %}
+                        <button type="submit" class="button" style="background-color:#f39c12">
+                            Undo
+                        </button>
+                    {% else %}
+                        <button type="submit" class="button">
+                            Complete
+                        </button>
+                    {% endif %}
+                </form>
+
+                <a href="{% url 'task-update' task.pk %}" class="button" style="background-color:#3498db">
+                    Update
+                </a>
+
+                <a href="{% url 'task-delete' task.pk %}" class="button" style="background-color:#e74c3c">
+                    Delete
+                </a>
+
             </div>
         </li>
     {% empty %}

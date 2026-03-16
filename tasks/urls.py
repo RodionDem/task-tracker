@@ -1,11 +1,11 @@
 from django.urls import path
 from . import views
-
+from .views import ToggleTaskStatusView
 
 urlpatterns = [
     path("", views.TaskListView.as_view(), name="task-list"),
     path("tasks/create/", views.TaskCreateView.as_view(), name="task-create"),
-    path("tasks/<int:pk>/toggle/", views.toggle_task_status, name="task-toggle"),
+    path("tasks/<int:pk>/toggle/", ToggleTaskStatusView.as_view(), name="task-toggle"),
     path("tasks/<int:pk>/update/", views.TaskUpdateView.as_view(), name="task-update"),
     path("tasks/<int:pk>/delete/", views.TaskDeleteView.as_view(), name="task-delete"),
 
